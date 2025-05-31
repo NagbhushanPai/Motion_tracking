@@ -1,14 +1,16 @@
 # Motion Tracking
 
+## Overview
+
 This repository contains a motion tracking application that uses computer vision techniques to track and analyze movement in video feeds.
 
 ## Features
 
 - Real-time motion detection and tracking
-- Support for multiple video sources
-- Motion path visualization
-- Motion data analysis and export
-- Configurable detection sensitivity
+- Support for multiple video sources (webcam, video files, IP cameras)
+- Motion path visualization with customizable display options
+- Advanced motion data analysis and export (CSV, JSON)
+- Configurable detection sensitivity and tracking parameters
 
 ## Installation
 
@@ -28,13 +30,29 @@ pip install -r requirements.txt
 ```bash
 # Run the main application
 python motion_tracker.py --source video.mp4
+
+# Run with optimized settings for performance
+python motion_tracker.py --source video.mp4 --optimize
+
+# Enable debug visualization
+python motion_tracker.py --source webcam --debug
 ```
+
+## Performance Optimizations
+
+The tracking algorithm has been optimized with:
+
+- Multi-threading for parallel processing
+- GPU acceleration (CUDA support)
+- Memory usage optimizations
+- Frame skipping for high-frame-rate sources
 
 ## Requirements
 
 - Python 3.7+
-- OpenCV
-- NumPy
+- OpenCV 4.5+
+- NumPy 1.20+
+- CUDA Toolkit 10.1+ (optional, for GPU acceleration)
 - Other dependencies listed in requirements.txt
 
 ## License
